@@ -33,6 +33,8 @@ jobs:
       run: "echo '{}' > params.json && pip3 install -U pip && pip3 install -U setuptools && pip3 install numpy && pip3 install pandas && pip3 install sklearn && pip3 install matplotlib && pip3 install keras && pip3 install --upgrade tensorflow==2.2.0-rc0"
     - name: Show nbconvert version
       run: " python -c 'import nbconvert; print(nbconvert.__version__)'"
+    - name: Install older version for papermill
+      run: " pip3 install papermill==2.0.0"
     - uses: yaananth/run-notebook@v1
       env:
         RUNNER: ${{ toJson(runner) }}
